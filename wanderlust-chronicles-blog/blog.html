@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - All About Rafa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .blog-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        
+        .blog-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .blog-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .blog-post-full {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-post-full:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-post-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .blog-post-content {
+            padding: 2rem;
+        }
+        
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .blog-post-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .blog-post-excerpt {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: #5a67d8;
+        }
+        
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-compass"></i>
+                    All About Rafa
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="blog-header">
+        <div class="container">
+            <h1>Travel Stories & Adventures</h1>
+            <p>Chronicles from around the world, shared with love and wanderlust</p>
+        </div>
+    </section>
+
+    <main class="blog-container">
+        <div class="category-filters">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Desert Adventures</button>
+            <button class="filter-btn">City Life</button>
+            <button class="filter-btn">Horse Adventures</button>
+        </div>
+
+        <article class="blog-post-full" id="desert">
+            <div class="blog-post-image">
+                <img src="images/rafa-desert.jpg" alt="Rafa in the desert" style="width: 100%; height: 300px; object-fit: cover;">
+            </div>
+            <div class="blog-post-content">
+                <div class="blog-post-meta">
+                    <span class="post-category">Desert Adventure</span>
+                    <span><i class="fas fa-calendar"></i> March 15, 2024</span>
+                    <span><i class="fas fa-clock"></i> 8 min read</span>
+                </div>
+                <h2 class="blog-post-title">Lost in the Desert Beauty</h2>
+                <p class="blog-post-excerpt">
+                    There's something magical about standing in the middle of endless sand dunes, where the silence speaks louder than words and the sunset paints the sky in colors you never knew existed. My desert adventure was a journey of self-discovery, where every step through the golden sand brought me closer to understanding the raw beauty of our world. From the scorching heat of midday to the surprising chill of desert nights, this landscape taught me about resilience, solitude, and the incredible power of nature. The stars here shine brighter than anywhere else I've been!
+                </p>
+                <button class="read-more" onclick="expandPost(this)">
+                    Read Full Story <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="full-story" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee;">
+                    <p>The desert called to me long before I actually made the trip. I'd seen photos of endless dunes and dramatic sunsets, but nothing could have prepared me for the actual experience of being completely surrounded by such raw, untamed beauty.</p>
+                    <p>My journey began at dawn, when the sand was still cool beneath my feet and the air held just a hint of the heat that would define the day. As I walked deeper into the dunes, civilization became just a memory, replaced by the rhythmic sound of wind sculpting sand and the overwhelming sense of being utterly alone yet completely connected to something greater.</p>
+                    <p>The silence was profound – not empty, but full of possibilities. It gave me space to think, to breathe, to simply exist without the constant noise of modern life. When night fell, the temperature dropped dramatically, and I understood why desert travelers speak of the desert's dual nature. The same landscape that challenges you with brutal heat by day wraps you in surprising cold by night.</p>
+                    <p>But it was the night sky that truly took my breath away. Without any light pollution, the stars appeared in such abundance that I felt like I was seeing the universe for the first time. I spent hours lying on my back in the sand, overwhelmed by the vastness above and the profound sense of peace that the desert had given me.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-post-full" id="city">
+            <div class="blog-post-image">
+                <img src="images/rafa-chicago.jpg" alt="Rafa in Chicago" style="width: 100%; height: 300px; object-fit: cover;">
+            </div>
+            <div class="blog-post-content">
+                <div class="blog-post-meta">
+                    <span class="post-category">City Life</span>
+                    <span><i class="fas fa-calendar"></i> February 28, 2024</span>
+                    <span><i class="fas fa-clock"></i> 6 min read</span>
+                </div>
+                <h2 class="blog-post-title">Chicago Days and Nights</h2>
+                <p class="blog-post-excerpt">
+                    The Windy City completely captured my heart! From the moment I arrived, Chicago welcomed me with its incredible architecture, amazing deep-dish pizza (yes, it lives up to the hype!), and the warmest people I've ever met. Walking along the lakefront, exploring Millennium Park, and getting lost in the vibrant neighborhoods taught me that cities have souls too. The skyline views from the river tour were absolutely breathtaking, and don't even get me started on the food scene – every meal was an adventure in itself. Chicago, you've got a piece of my heart forever!
+                </p>
+                <button class="read-more" onclick="expandPost(this)">
+                    Read Full Story <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="full-story" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee;">
+                    <p>Chicago surprised me from the very first moment. I expected a busy, impersonal city, but what I found was a place with incredible warmth and character. The architecture alone is worth the trip – walking through downtown feels like an outdoor museum of some of the world's most innovative buildings.</p>
+                    <p>The lakefront changed my perspective on urban spaces entirely. Lake Michigan stretches to the horizon like an ocean, and the lakefront trail gave me miles of peaceful walking despite being in the heart of such a major city. I spent an entire afternoon in Millennium Park, watching people from all walks of life come together in this beautiful shared space.</p>
+                    <p>But it was the neighborhoods that really won me over. Each area has its own distinct personality – from the artistic vibe of Wicker Park to the historic charm of Lincoln Park. The people I met were genuinely friendly and proud of their city, always ready with recommendations for the best local spots.</p>
+                    <p>And the food! The deep-dish pizza lived up to every bit of hype, but Chicago's culinary scene goes so much deeper. From hole-in-the-wall Mexican joints to world-class fine dining, every meal was a discovery. The river architecture tour was the perfect way to see the city from a different perspective, learning about the incredible engineering and design that makes Chicago such a unique place.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-post-full" id="horse">
+            <div class="blog-post-image">
+                <img src="images/rafa-horse.jpg" alt="Rafa on horseback" style="width: 100%; height: 300px; object-fit: cover;">
+            </div>
+            <div class="blog-post-content">
+                <div class="blog-post-meta">
+                    <span class="post-category">Horse Adventures</span>
+                    <span><i class="fas fa-calendar"></i> January 20, 2024</span>
+                    <span><i class="fas fa-clock"></i> 10 min read</span>
+                </div>
+                <h2 class="blog-post-title">Horseback Adventures and New Perspectives</h2>
+                <p class="blog-post-excerpt">
+                    There's something absolutely magical about connecting with these beautiful, powerful creatures while exploring new landscapes from their backs. My horseback riding adventures have taught me patience, trust, and a completely different way of experiencing the world. From gentle trail rides through scenic countryside to more challenging terrain that tested both my courage and my riding skills, every moment in the saddle has been a lesson in partnership and respect. The bond you form with your horse, the rhythm of their gait, and the unique vantage point of seeing the world from horseback – it's an experience that changes you.
+                </p>
+                <button class="read-more" onclick="expandPost(this)">
+                    Read Full Story <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="full-story" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee;">
+                    <p>My first time on horseback was equal parts terrifying and exhilarating. I remember gripping the reins so tightly my knuckles went white, convinced that this massive, powerful animal would somehow sense my nervousness and take off running. But horses, I learned, are incredibly intuitive creatures. They respond to your energy, your confidence, and your respect for them.</p>
+                    <p>As I became more comfortable in the saddle, I discovered that horseback riding isn't just about transportation – it's about partnership. You and your horse become a team, communicating through subtle shifts in weight, gentle pressure from your legs, and the trust you build together. There's a rhythm to it, a meditation in the steady four-beat walk or the smooth rocking motion of a canter.</p>
+                    <p>The landscapes I've explored on horseback have been incredible – winding mountain trails that would be impossible to navigate on foot, vast open meadows where you can let your horse stretch into a gallop, quiet forest paths where the only sounds are hoofbeats on soft earth and birds singing overhead. There's something about being up high, moving with the natural rhythm of the horse, that gives you a completely different perspective on the world around you.</p>
+                    <p>But perhaps the most valuable thing horseback riding has taught me is patience and presence. Horses live in the moment – they're not worried about tomorrow's weather or yesterday's mistakes. When you're riding, you have to be fully present too, aware of your horse's mood, the terrain ahead, the weather conditions. It's a form of mindfulness that has carried over into other areas of my life, teaching me to slow down and really experience each moment.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Never Miss an Adventure</h2>
+                <p>Get the latest travel stories and tips delivered straight to your inbox</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Wanderlust Chronicles</h3>
+                    <p>Sharing adventures, creating memories, inspiring journeys.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Mountain Adventures</a></li>
+                        <li><a href="#">Beach Life</a></li>
+                        <li><a href="#">City Explorer</a></li>
+                        <li><a href="#">Food & Culture</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wanderlust Chronicles. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>

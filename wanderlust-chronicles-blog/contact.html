@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - All About Rafa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-main {
+            padding: 4rem 0;
+        }
+        
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #5a67d8;
+        }
+        
+        .contact-info {
+            padding: 2rem 0;
+        }
+        
+        .contact-info h2 {
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        
+        .contact-methods {
+            margin-bottom: 3rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .contact-method i {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-right: 1rem;
+            width: 30px;
+        }
+        
+        .contact-method-content h3 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .contact-method-content p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .social-section h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .social-links-large {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links-large a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .social-links-large a:hover {
+            transform: translateY(-3px);
+            background: #5a67d8;
+        }
+        
+        .faq-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-compass"></i>
+                    All About Rafa
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Let's Connect!</h1>
+            <p>I'd love to hear from you – whether it's travel tips, collaboration ideas, or just to say hello!</p>
+        </div>
+    </section>
+
+    <main class="contact-main">
+        <div class="contact-container">
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h2>Send Me a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your travel dreams, ask for recommendations, or just say hi!" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p style="color: #666; margin-bottom: 2rem; line-height: 1.6;">
+                        I'm always excited to connect with fellow travelers, answer questions about destinations I've visited, 
+                        or chat about upcoming adventures. Don't hesitate to reach out!
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-method-content">
+                                <h3>Email Me</h3>
+                                <p>rafa._1@icloud.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <div class="contact-method-content">
+                                <h3>Response Time</h3>
+                                <p>Usually within 24-48 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-method-content">
+                                <h3>Based In</h3>
+                                <p>Texas (but always traveling!)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-section">
+                        <h3>Let's Stay Connected</h3>
+                        <p>Feel free to reach out through email - that's the best way to connect with me!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: #333;">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    How do you afford to travel so much?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    Great question! I've learned to travel smart – I use travel rewards credit cards, book flights during sales, 
+                    stay in hostels or use Airbnb, and always look for free activities. I also work remotely sometimes, 
+                    which helps extend trips. It's all about prioritizing travel in your budget and being flexible with dates and destinations.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you travel solo or with friends?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    Both! Some of my best adventures have been solo trips where I could be completely spontaneous, 
+                    but I also love traveling with my close friends. There's something special about sharing those incredible 
+                    moments with people you care about. I'd say it's about 60% group travel, 40% solo.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What's your favorite destination so far?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    That's like asking me to pick a favorite child! But if I had to choose, Iceland holds a special place 
+                    in my heart. The raw, dramatic landscapes and the kindness of the locals made it unforgettable. 
+                    Japan is a close second – the culture, food, and attention to detail blew my mind.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can you help plan my trip?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    I love helping fellow travelers! While I can't offer full travel planning services, I'm always happy 
+                    to share recommendations, tips, and insights about places I've been. Feel free to reach out with 
+                    specific questions about destinations, and I'll do my best to help!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you work with travel brands?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    Yes, occasionally! I'm selective about partnerships and only work with brands that align with my values 
+                    and that I genuinely believe in. All sponsored content is clearly marked, and my opinions are always honest. 
+                    If you're interested in collaborating, feel free to reach out!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What camera gear do you use?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    I keep it pretty simple! I mainly use a Canon EOS R6 with a 24-70mm lens for most shots, 
+                    and a GoPro Hero 11 for action shots and underwater photography. For drone shots, I have a DJI Mini 3. 
+                    But honestly, some of my favorite photos were taken with just my iPhone – it's more about the moment than the gear!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Never Miss an Adventure</h2>
+                <p>Get the latest travel stories and tips delivered straight to your inbox</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Wanderlust Chronicles</h3>
+                    <p>Sharing adventures, creating memories, inspiring journeys.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Mountain Adventures</a></li>
+                        <li><a href="#">Beach Life</a></li>
+                        <li><a href="#">City Explorer</a></li>
+                        <li><a href="#">Food & Culture</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wanderlust Chronicles. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
